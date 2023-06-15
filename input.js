@@ -1,10 +1,8 @@
-const { stderr, stdin } = require("process");
 // stores the active TCP object sent from the server
 let connection;
 
-//event hadnler for standard input
+//event handler for standard input
 const handleUserInput = (key) => {
-  const stdout = process.stdout;
   if (key === "\u0003") {
     process.exit();
   }
@@ -20,7 +18,6 @@ const handleUserInput = (key) => {
   if (key === "d" || key === "D") {
     connection.write("Move: right\n");
   }
-  // stdout.write(key);
 };
 
 //setup interface to handle user input from stdin
