@@ -9,6 +9,12 @@ const connect = function () {
   //interpret incoming data as text
   conn.setEncoding("utf8");
 
+  // once a connection event is emmitted, the connect event handler prints this message
+  conn.on("connect", () => {
+    console.log("connection has been successfully established");
+    conn.write("Name: sbm");
+  });
+
   conn.on("data", (data) => {
     console.log(data);
   });
