@@ -1,4 +1,6 @@
 const { stderr, stdin } = require("process");
+// stores the active TCP object sent from the server
+let connection;
 
 //event hadnler for standard input
 const handleUserInput = (key) => {
@@ -7,22 +9,23 @@ const handleUserInput = (key) => {
     process.exit();
   }
   if (key === "w" || key === "W") {
-    stdout.write("Move: up\n");
+    connection.write("Move: up\n");
   }
   if (key === "a" || key === "A") {
-    stdout.write("Move: left\n");
+    connection.write("Move: left\n");
   }
   if (key === "s" || key === "S") {
-    stdout.write("Move: down\n");
+    connection.write("Move: down\n");
   }
   if (key === "d" || key === "D") {
-    stdout.write("Move: right\n");
+    connection.write("Move: right\n");
   }
   // stdout.write(key);
 };
 
 //setup interface to handle user input from stdin
-const setupInput = function () {
+const setupInput = function (conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
