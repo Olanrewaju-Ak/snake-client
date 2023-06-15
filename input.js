@@ -6,7 +6,19 @@ const handleUserInput = (key) => {
   if (key === "\u0003") {
     process.exit();
   }
-  stdout.write(key);
+  if (key === "w" || key === "W") {
+    stdout.write("Move: up\n");
+  }
+  if (key === "a" || key === "A") {
+    stdout.write("Move: left\n");
+  }
+  if (key === "s" || key === "S") {
+    stdout.write("Move: down\n");
+  }
+  if (key === "d" || key === "D") {
+    stdout.write("Move: right\n");
+  }
+  // stdout.write(key);
 };
 
 //setup interface to handle user input from stdin
