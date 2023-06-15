@@ -1,9 +1,9 @@
-
 const { connect } = require("./client");
 const { setupInput } = require("./input");
 
-
 console.group("connecting ...");
-connect();
+// connect();
 
-setupInput();
+const connectObject = connect();
+
+setupInput(connectObject);
