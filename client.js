@@ -13,6 +13,12 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("connection has been successfully established");
     conn.write("Name: sbm");
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    //   conn.write("Move: right");
+    //   conn.write("Move: down");
+    //   conn.write("Move: left");
+    // }, 1000);
   });
 
   conn.on("data", (data) => {
