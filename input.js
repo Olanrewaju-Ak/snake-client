@@ -3,20 +3,25 @@ let connection;
 
 //event handler for standard input
 const handleUserInput = (key) => {
+  let message = "ouch!";
   if (key === "\u0003") {
     process.exit();
   }
   if (key === "w" || key === "W") {
-    connection.write("Move: up\n");
+    connection.write("Move: up");
   }
   if (key === "a" || key === "A") {
-    connection.write("Move: left\n");
+    connection.write("Move: left");
   }
   if (key === "s" || key === "S") {
-    connection.write("Move: down\n");
+    connection.write("Move: down");
   }
   if (key === "d" || key === "D") {
-    connection.write("Move: right\n");
+    connection.write("Move: right");
+  }
+
+  if (key === "m" || key === "M") {
+    connection.write(`Say: ${message}`);
   }
 };
 
@@ -29,6 +34,7 @@ const setupInput = function (conn) {
   stdin.resume();
 
   stdin.on("data", handleUserInput);
+
   return stdin;
 };
 
