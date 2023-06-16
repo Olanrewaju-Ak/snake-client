@@ -12,7 +12,7 @@ const connect = function () {
   // once a connection event is emmitted, the connect event handler prints this message
   conn.on("connect", () => {
     console.log("connection has been successfully established");
-    conn.write("Name: sbm");
+    conn.write("Name: OBO");
     
   });
 
