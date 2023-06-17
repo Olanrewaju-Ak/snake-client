@@ -12,7 +12,6 @@ let connection;
 //event handler for standard input
 const handleUserInput = (key) => {
   key = key.toUpperCase();
-  // let message = "ouch!";
 
   if (key === "\u0003") {
     process.exit();
