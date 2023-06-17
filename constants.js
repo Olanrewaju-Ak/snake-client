@@ -7,8 +7,8 @@ const MOVE_DOWN_KEY = "S";
 const MOVE_LEFT_KEY = "A";
 
 const MESSAGES = {
-  m: "ouch",
-  g: "woosh"
+  M: "ouch",
+  G: "woosh"
 };
 
 module.exports = {
