@@ -6,11 +6,17 @@ const MOVE_RIGHT_KEY = "D";
 const MOVE_DOWN_KEY = "S";
 const MOVE_LEFT_KEY = "A";
 
+const MESSAGES = {
+  m: "ouch",
+  g: "woosh"
+};
+
 module.exports = {
   IP,
   PORT,
   MOVE_UP_KEY,
   MOVE_RIGHT_KEY,
   MOVE_DOWN_KEY,
-  MOVE_LEFT_KEY
+  MOVE_LEFT_KEY,
+  MESSAGES
 };
