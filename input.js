@@ -1,4 +1,10 @@
-const { MOVE_UP_KEY, MOVE_RIGHT_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY } = require("./constants");
+const {
+  MOVE_UP_KEY,
+  MOVE_RIGHT_KEY,
+  MOVE_DOWN_KEY,
+  MOVE_LEFT_KEY,
+  MESSAGES
+} = require("./constants");
 
 // stores the active TCP object sent from the server
 let connection;
@@ -6,7 +12,7 @@ let connection;
 //event handler for standard input
 const handleUserInput = (key) => {
   key = key.toUpperCase();
-  let message = "ouch!";
+  // let message = "ouch!";
 
   if (key === "\u0003") {
     process.exit();
@@ -23,9 +29,11 @@ const handleUserInput = (key) => {
   if (key === MOVE_RIGHT_KEY) {
     connection.write("Move: right");
   }
-
-  if (key === "m" || key === "M") {
-    connection.write(`Say: ${message}`);
+  // to get the messages from the object
+  for (const prompt in MESSAGES) {
+    if (key === prompt) {
+      connection.write(`Say: ${MESSAGES[prompt]}`);
+    }
   }
 };
 
